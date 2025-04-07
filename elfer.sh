@@ -68,7 +68,9 @@ if [[ $# == 0 ]]; then
 	$qemu_opt $exe_file
 	exit 0
 elif [[ $# == 1 ]] && [[ $1 != *-* ]]; then
-	$(set_elfer_exe $1)
+	if [[ -e $1 ]]; then
+		$(set_elfer_exe $1)
+	fi
 	filename=$1
 	filename=$(echo $1 | sed "s/\.s//g")
 	exe_file=$filename.exe
