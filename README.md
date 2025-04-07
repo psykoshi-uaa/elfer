@@ -38,12 +38,11 @@ default: *qemu-riscv64*\
 **DEBUGGING TOOL**\
 default: *riscv64-linux-gnu-gdb*
 
-_____________________
 # INSTALLATION
 Copy the elfer.sh script into a new file on your computer. I use ~/.scripts/elfer/elfer.sh\
 \
-`chmod +x {file/location/of/elfer.sh}`\
-This will make the file an executable script.\
+Make the file an executable script.\
+`chmod +x file/location/of/elfer.sh`\
 \
-`ln -s {file/location/of/elfer.sh} /bin/elfer`\
-This will create a symbolic link (shortcut) to the script.
+Create a symbolic link (shortcut) to the script.\
+`ln -s file/location/of/elfer.sh /bin/elfer`
