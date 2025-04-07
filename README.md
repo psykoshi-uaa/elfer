@@ -5,7 +5,7 @@ elfer is a quick and dirty riscv compiler. The following commands require an add
 `	-g [file]| --gdb	| compile with the -g flag`\
 `	-a [file]| --assemble	| compile the object file and the executable`\
 `	-c [file]| --clean	| cleans the object and exe files given a name`\
-`	-d [file]| --debug	| runs \e[033;1m$debugger [file]`\
+`	-d [file]| --debug	| runs your chosen debugger and appends the selected file`\
 `	-h 	 | --help	| hi`\
 \
 assembling a file or running an executable will overwrite the ".elfer_exe" file\
@@ -17,13 +17,15 @@ example use:\
 `elfer 			| this will run hello_world.exe`\
 `elfer hello_world 	| this will also run hello_world.exe`\
 `elfer wassup_world 	| this will run wassup_world.exe`\
-`elfer 			| this will now run wassup_world.exe`\
-
+`elfer 			| this will now run wassup_world.exe`
+\
+Typing the script uses sed to extract the filename. If you type example.s or example there will be no difference.
 
 ## OPTIONS
-
-GDB TOOLCHAIN\
-ADDITIONAL ASSEMBLE FLAG\
-QEMU-USER\
-DEBUGGING TOOL
+##### GDB TOOLCHAIN
+##### ADDITIONAL ASSEMBLE FLAG
+##### QEMU-USER
+##### DEBUGGING TOOL
+\
+These options can be changed at the top of the elfer.sh file.
 _____________________
