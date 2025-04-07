@@ -24,15 +24,20 @@ said file with zero arguments.\
 *The script uses* sed *to extract the filename. If you type example.s or example there will be no difference.*
 
 # OPTIONS
-These options can be changed at the top of the elfer.sh file.
-GDB TOOLCHAIN
-###### default: riscv64-linux-gnu
-ADDITIONAL ASSEMBLE FLAG
-###### default: -march=rv64imac
-QEMU-USER
-###### default: qemu-riscv64
-DEBUGGING TOOL
-###### default: riscv64-linux-gnu-gdb
+These options can be changed at the top of the elfer.sh file.\
+\
+**GDB TOOLCHAIN**\
+default: *riscv64-linux-gnu*\
+\
+**ADDITIONAL ASSEMBLE FLAG**\
+default: *-march=rv64imac*\
+\
+**QEMU-USER**\
+default: *qemu-riscv64*\
+\
+**DEBUGGING TOOL**\
+default: *riscv64-linux-gnu-gdb*
+
 _____________________
 # INSTALLATION
 Copy the elfer.sh script into a new file on your computer. I use ~/.scripts/elfer/elfer.sh\
