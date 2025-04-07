@@ -21,11 +21,14 @@ example use:\
 \
 Typing the script uses sed to extract the filename. If you type example.s or example there will be no difference.
 
-## OPTIONS
-##### GDB TOOLCHAIN
-##### ADDITIONAL ASSEMBLE FLAG
-##### QEMU-USER
-##### DEBUGGING TOOL
-\
+# OPTIONS
 These options can be changed at the top of the elfer.sh file.
+GDB TOOLCHAIN
+###### default: riscv64-linux-gnu
+ADDITIONAL ASSEMBLE FLAG
+###### default: -march=rv64imac
+QEMU-USER
+###### default: qemu-riscv64
+DEBUGGING TOOL
+###### default: riscv64-linux-gnu-gdb
 _____________________
