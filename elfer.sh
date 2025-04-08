@@ -72,8 +72,8 @@ elif [[ $# == 1 ]] && [[ $1 != *-* ]]; then
 		$(set_elfer_exe $1)
 	fi
 	filename=$1
-	filename=$(echo $1 | sed "s/\.s//g")
-	filename=$(echo $1 | sed "s/\.//g")
+	filename=$(echo $filename | sed "s/\.s//g")
+	filename=$(echo $filename | sed "s/\.//g")
 	exe_file=$filename.exe
 	$qemu_opt $exe_file
 	exit 0
@@ -82,19 +82,17 @@ elif [[ $# == 2 ]] && [[ $1 != *-* ]]; then
 fi
 
 if [[ $# -ge 1 ]] && [[ $# -lt 3 ]]; then
+	if [ $# -eq 1 ]; then
+		echo -e "\e[31;1mToo few arguments\e[0m"
+		exit 1
+	fi
 	filename=$2
 	filename=$(echo $filename | sed "s/\.s//g")
-	filename=$(echo $1 | sed "s/\.//g")
+	filename=$(echo $filename | sed "s/\.//g")
 	src_file=${filename}.s
 	obj_file=${filename}.o
 	exe_file=${filename}.exe
 
-	if [ $# -eq 1 ]; then
-		echo -e "\e[31;1mToo few arguments\e[0m"
-		exit 1
-	elif [ $# -eq 2 ]; then
-		filename=$2
-	fi
 	case $1 in
 	-g | --gdb)
 		dbg_mode='-g'
