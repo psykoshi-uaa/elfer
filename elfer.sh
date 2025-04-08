@@ -73,6 +73,7 @@ elif [[ $# == 1 ]] && [[ $1 != *-* ]]; then
 	fi
 	filename=$1
 	filename=$(echo $1 | sed "s/\.s//g")
+	filename=$(echo $1 | sed "s/\.//g")
 	exe_file=$filename.exe
 	$qemu_opt $exe_file
 	exit 0
@@ -83,6 +84,7 @@ fi
 if [[ $# -ge 1 ]] && [[ $# -lt 3 ]]; then
 	filename=$2
 	filename=$(echo $filename | sed "s/\.s//g")
+	filename=$(echo $1 | sed "s/\.//g")
 	src_file=${filename}.s
 	obj_file=${filename}.o
 	exe_file=${filename}.exe
