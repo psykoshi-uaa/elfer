@@ -5,7 +5,6 @@ risc_gdb="riscv64-linux-gnu"
 a_opt="-march=rv64imac"
 qemu_opt="qemu-riscv64"
 debugger="riscv64-linux-gnu-gdb"
-ld_linker="-T/usr/bin/linker.ld"
 #CHANGE FOR GNU TOOLCHAIN
 
 #PRINT HELP
@@ -46,7 +45,7 @@ fi
 #REST OF CODE
 function assemble(){
 	$($risc_gdb-as $dbg_mode $a_opt -o $obj_file $src_file)
-	$($risc_gdb-ld $ld_linker -o $exe_file $obj_file)
+	$($risc_gdb-ld -o $exe_file $obj_file)
 	exit 0
 }
 

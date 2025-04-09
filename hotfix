@@ -1,0 +1,2 @@
+#!/bin/bash
+exec /bin/riscv64-linux-gnu-ld.bfd -T/usr/bin/linker.ld "$@"
