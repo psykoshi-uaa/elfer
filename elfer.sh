@@ -34,7 +34,6 @@ if [[ $1 == "-h" ]] || [[ $1 == "-help" ]]; then
 	ADDITIONAL ASSEMBLE FLAG:\t\e[33;1m$a_opt\e[0m\n
 	QEMU-USER:\t\t\t\e[33;1m$qemu_opt\e[0m\n
 	DEBUGGING TOOL:\t\t\e[33;1m$debugger\e[0m\n
-	LD LINKER:\t\t\t\e[33;1m$ld_linker\e[0m\n
 	_____________________\n
 	")
 	echo -e $local_help_text
@@ -45,7 +44,7 @@ fi
 #REST OF CODE
 function assemble(){
 	$($risc_gdb-as $dbg_mode $a_opt -o $obj_file $src_file)
-	$($risc_gdb-ld -o $exe_file $obj_file)
+	$($risc_gdb-ld $dbg_mode -o $exe_file $obj_file)
 	exit 0
 }
 
